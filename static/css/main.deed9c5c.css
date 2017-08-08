@@ -1,0 +1,2 @@
+body{margin:0;padding:0;font-family:sans-serif}.container{background-color:grey;position:relative}.bullet,.player{position:absolute}.bullet{height:20px;width:10px;background-color:#ff0}.enemy{position:absolute}.playerInfo{width:800px;text-align:center;height:50px;position:absolute}.health-container{width:60%;background-color:#000;float:left}.health-container,.healthbar{height:50px;position:absolute}.healthbar{background-color:green}.score{float:right}
+/*# sourceMappingURL=main.deed9c5c.css.map*/
