@@ -1,0 +1,25 @@
+.container{
+
+  background-color: grey;
+  position: relative;
+}
+
+.player {
+	position: absolute;
+}
+
+.bullet {
+	position: absolute;
+	height: 20px;
+	width: 10px;
+	background-color: yellow;
+}
+
+.enemy {
+	position: absolute;
+}
+
+.playerInfo {
+	width: 800;
+	text-align: center;
+}
