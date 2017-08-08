@@ -20,6 +20,23 @@
 }
 
 .playerInfo {
-	width: 800;
+	width: 800px;
 	text-align: center;
+	height: 50px;
+	position: absolute;
+}
+.health-container{
+	width: 60%;
+	height: 50px;
+	background-color: black;
+	float: left;
+	position: absolute;
+}
+.healthbar {
+	height: 50px;
+	background-color: green;
+	position: absolute;
+}
+.score {
+	float: right;
 }

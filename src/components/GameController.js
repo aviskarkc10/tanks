@@ -14,6 +14,8 @@ class GameController extends Component{
 
 			game: true,
 			score: 0,
+			health: 100,
+			healthBarColour: "green",
 			containerHeight: 600,
 			containerWidth: 800,
 			playerHeight: 80,
@@ -112,7 +114,7 @@ class GameController extends Component{
     	})
 
     	if(this.state.bulletX<0 || this.state.bulletX>this.state.containerWidth || this.state.bulletY<0 || this.state.bulletY+this.state.bulletHeight>this.state.containerHeight){
-    		this.setState({
+	   		this.setState({
     			bulletFired: false
     		})
     		
@@ -138,11 +140,29 @@ class GameController extends Component{
 			   this.state.enemyHeight + enemy.enemyY > this.state.playerY)) {
 
 					//collision between player and enemy
+					let tempHealth = this.state.health-25;
 
-					this.setState({
-						game: false
-					})
-					this.restartGame();
+					if(tempHealth<=0){
+						this.setState({
+							game: false
+						})
+						this.restartGame();
+					}
+
+					else if(tempHealth<=25){
+						this.setState({
+							healthBarColour: 'red',
+							health: tempHealth
+						})
+					}
+
+					else{
+						this.setState({
+							health: tempHealth
+						})
+					}
+
+					delete this.state.enemies[i];
 
 				}
 
@@ -390,7 +410,10 @@ class GameController extends Component{
 				}
 
 				<div className="playerInfo">
-					<div className = "score">{this.state.score}</div>
+					<div className = "health-container">
+						<div className="healthbar" style={{width: this.state.health+'%', backgroundColor: this.state.healthBarColour}}></div>
+					</div>
+					<div className = "score">Score: {this.state.score}</div>
 				</div>
 			</div>
 
